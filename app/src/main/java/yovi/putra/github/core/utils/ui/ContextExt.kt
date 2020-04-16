@@ -1,4 +1,4 @@
-package yovi.putra.hackernews.core.utils.ui
+package yovi.putra.github.core.utils.ui
 
 import android.content.Context
 import android.widget.Toast

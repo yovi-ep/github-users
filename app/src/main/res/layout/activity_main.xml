@@ -6,22 +6,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <SearchView
-        android:id="@+id/et_serachview"
-        style="@style/TextView.Medium"
-        android:padding="@dimen/margin_small"
-        android:queryHint="@string/placeholder_searchview"
-        android:layout_width="match_parent"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@color/colorPrimary"
+        android:padding="@dimen/margin_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            style="@style/TextView.Medium"
+            android:id="@+id/et_serachview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_marginStart="@dimen/margin_medium"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:padding="@dimen/margin_small"
+            android:textColorHint="@color/white"
+            android:hint="@string/placeholder_searchview"
+            android:gravity="center_vertical"
+            android:textColor="@color/white"
+            android:drawableStart="@drawable/ic_search"
+            android:background="@drawable/background_searchview_appbar"
+            android:autofillHints="@string/placeholder_searchview"
+            android:inputType="text" />
+    </com.google.android.material.appbar.AppBarLayout>
 
     <ProgressBar
         android:id="@+id/pb_loader"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/margin_small"
         style="?android:attr/progressBarStyleHorizontal"
+        android:indeterminate="true"
         android:visibility="invisible"
-        app:layout_constraintTop_toBottomOf="@id/et_serachview"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 

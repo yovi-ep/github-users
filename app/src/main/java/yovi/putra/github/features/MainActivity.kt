@@ -1,11 +1,11 @@
 package yovi.putra.github.features
 
 import android.os.Bundle
-import android.widget.SearchView
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.jakewharton.rxbinding.widget.RxTextView
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.viewmodel.ext.android.viewModel
-import androidx.lifecycle.Observer
 import yovi.putra.github.R
 import yovi.putra.github.core.base.BaseActivity
 import yovi.putra.github.core.utils.network.NetworkThrowable.errorMessage
@@ -14,7 +14,8 @@ import yovi.putra.github.core.utils.state.ResultState
 import yovi.putra.github.core.utils.ui.invisible
 import yovi.putra.github.core.utils.ui.visible
 import yovi.putra.github.data.model.SearchResponse
-import yovi.putra.hackernews.core.utils.ui.toast
+import yovi.putra.github.core.utils.ui.toast
+import java.util.concurrent.TimeUnit
 
 class MainActivity : BaseActivity() {
     private lateinit var adapter: MainAdapter
@@ -33,13 +34,11 @@ class MainActivity : BaseActivity() {
         rv_item.layoutManager = LinearLayoutManager(this)
         rv_item.adapter = adapter
 
-        et_serachview.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(p0: String?): Boolean = true
-            override fun onQueryTextChange(p0: String?): Boolean {
-                mainVM.searchUser(p0)
-                return true
-            }
-        })
+        RxTextView.textChangeEvents(et_serachview)
+            .debounce(1000, TimeUnit.MILLISECONDS)
+            .distinctUntilChanged()
+            .filter { !et_serachview.text.isNullOrEmpty() }
+            .subscribe { mainVM.searchUser(et_serachview.text.toString()) }
     }
 
     private var loaderObserver = Observer<LoaderState> {

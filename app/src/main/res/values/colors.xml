@@ -3,7 +3,8 @@
     <color name="colorPrimary">#24BBFF</color>
     <color name="colorPrimaryDark">#24BBFF</color>
     <color name="colorAccent">#FF9800</color>
-
+    <color name="background">#FFFFFF</color>
     <color name="fontColorPrimary">#6F6F6F</color>
+    <color name="fontColorSearchView">#D2DADADA</color>
     <color name="white">#FFF</color>
 </resources>

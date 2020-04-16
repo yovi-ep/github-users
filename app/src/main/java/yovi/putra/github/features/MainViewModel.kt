@@ -19,6 +19,6 @@ class MainViewModel(private val repo: GithubRepository) : BaseViewModel() {
                 { searchResponse.postValue(ResultState.Error(it)) }
             )
             .addTo(subscriber)
-
     }
+
 }

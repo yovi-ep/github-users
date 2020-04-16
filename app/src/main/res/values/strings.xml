@@ -5,5 +5,5 @@
     <string name="server_under_maintenance">The server is under maintenance</string>
     <string name="cannot_connect_toserver">Unable to communicate with server, please try again later</string>
 
-    <string name="placeholder_searchview">Serach Github users</string>
+    <string name="placeholder_searchview">Search Github users</string>
 </resources>
