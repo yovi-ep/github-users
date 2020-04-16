@@ -1,4 +1,4 @@
-package yovi.putra.hackernews.core.utils.thread
+package yovi.putra.github.core.utils.thread
 
 import io.reactivex.ObservableTransformer
 import io.reactivex.android.schedulers.AndroidSchedulers

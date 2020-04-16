@@ -1,4 +1,4 @@
-package yovi.putra.hackernews.core.utils.network
+package yovi.putra.github.core.utils.network
 
 import android.content.Context
 import android.net.ConnectivityManager

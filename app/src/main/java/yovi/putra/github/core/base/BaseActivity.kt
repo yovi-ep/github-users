@@ -3,7 +3,6 @@ package yovi.putra.github.core.base
 import android.content.Context
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import yovi.putra.hackernews.core.base.IBaseView
 
 /**
  * Created by yovi.putra

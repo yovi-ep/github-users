@@ -8,10 +8,22 @@
 
     <SearchView
         android:id="@+id/et_serachview"
+        style="@style/TextView.Medium"
         android:padding="@dimen/margin_small"
+        android:queryHint="@string/placeholder_searchview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/pb_loader"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/et_serachview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_item"
@@ -19,6 +31,6 @@
         android:layout_height="0dp"
         tools:listitem="@layout/item_of_user_list"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_serachview" />
+        app:layout_constraintTop_toBottomOf="@+id/pb_loader" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package yovi.putra.hackernews.core.base
+package yovi.putra.github.core.base
 
 import android.content.Context
 

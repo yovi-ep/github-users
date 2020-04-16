@@ -1,4 +1,4 @@
-package yovi.putra.hackernews.core.utils.state
+package yovi.putra.github.core.utils.state
 
 sealed class LoaderState {
     object Show: LoaderState()

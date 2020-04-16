@@ -1,10 +1,10 @@
-package yovi.putra.hackernews.core.utils.network
+package yovi.putra.github.core.utils.network
 
 import android.content.Context
 import android.util.Log
 import org.json.JSONObject
 import retrofit2.HttpException
-import yovi.putra.hackernews.R
+import yovi.putra.github.R
 
 object NetworkThrowable {
     fun errorMessage(context: Context, throwable: Throwable?): String =
