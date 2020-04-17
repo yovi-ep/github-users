@@ -6,6 +6,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import yovi.putra.github.BuildConfig
+import yovi.putra.github.core.utils.network.NoSSLSocketFactory
 import java.util.concurrent.TimeUnit
 
 
@@ -18,11 +19,13 @@ object RetrofitService {
             HttpLoggingInterceptor.Level.NONE
         }
 
+        val tlsSocket = NoSSLSocketFactory()
         val okHttp = OkHttpClient.Builder()
                 .addInterceptor(httpLoggingInterceptor)
                 .connectTimeout(30, TimeUnit.SECONDS)
                 .writeTimeout(30, TimeUnit.SECONDS)
                 .retryOnConnectionFailure(true)
+                .sslSocketFactory(tlsSocket, tlsSocket.trustManager)
                 .build()
 
         val retrofit = Retrofit.Builder()
