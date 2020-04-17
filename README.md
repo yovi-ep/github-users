@@ -7,3 +7,4 @@ The components implemented are:
 3. Asynchronous: RxJava, RxBinding 
 4. Live Data
 5. Kotlin
+6. NoSSLSocketFactory
